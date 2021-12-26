@@ -11,7 +11,7 @@ def evaluate_metric(id_val, year_val, s2_val, swid_val):
     teams = league.teams
     metrics = []
 
-    WEEKS_COMPLETED = league.current_week - 1
+    WEEKS_COMPLETED = league.current_week - 1 if (league.current_week - 1) != 14 else 14
     if WEEKS_COMPLETED <= 0:
         raise ValueError('No weeks have completed.')
 
